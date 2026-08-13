@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* "Printed technical documentation" palette: warm paper, ink, oxide-red accent */
+  --paper: #f2efe8;
+  --paper-2: #e8e4d8;
+  --ink: #1c1914;
+  --ink-soft: #6b6457;
+  --line: #d2ccbd;
+  --oxide: #b43a10;
+  --oxide-deep: #8c2d0c;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-oxide: var(--oxide);
+  --color-oxide-deep: var(--oxide-deep);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* clip instead of hidden — overflow-x:hidden breaks position:sticky */
+html {
+  overflow-x: clip;
+  scrollbar-gutter: stable;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink) var(--paper-2);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* WebKit — technical “printed doc” scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--paper-2);
+  border-left: 1px solid var(--line);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border: 2px solid var(--paper-2);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--oxide);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--paper-2);
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: 3px;
+}
+
+/* Technical caption / label — uppercase mono used for indices, captions, nav */
+.mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Unifies mixed stock photography so it reads as one printed picture set */
+.fig-img {
+  filter: saturate(0.82) contrast(1.03);
 }
