@@ -41,7 +41,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
             <div className="mt-8 space-y-2.5">
               <div className="flex items-center gap-3">
                 <span className="h-2.5 w-2.5 bg-oxide/20 outline outline-1 outline-oxide" aria-hidden />
-                <span className="mono-label text-ink-soft">oblast působnosti (ČR)</span>
+                <span className="mono-label text-ink-soft">oblast působnosti</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="h-2.5 w-2.5 rounded-full bg-ink" aria-hidden />
@@ -55,9 +55,12 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
               viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
               className="w-full"
               role="img"
-              aria-label="Mapa České republiky se zvýrazněnou působností SOPAT.CZ po celé ČR; firma realizuje zakázky i na Slovensku"
+              aria-label="Mapa České republiky a Slovenska se zvýrazněnou působností SOPAT.CZ"
             >
-              {Object.entries(REGION_PATHS).map(([id, d]) => (
+              {[
+                ...Object.entries(REGION_PATHS).filter(([id]) => id === "Slovensko"),
+                ...Object.entries(REGION_PATHS).filter(([id]) => id !== "Slovensko"),
+              ].map(([id, d]) => (
                 <path
                   key={id}
                   d={d}
@@ -68,6 +71,39 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
                   strokeLinejoin="round"
                 />
               ))}
+
+              <text
+                x={320}
+                y={290}
+                textAnchor="middle"
+                fontSize="18"
+                fill="var(--ink)"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.08em"
+                stroke="var(--paper)"
+                strokeWidth="6"
+                paintOrder="stroke"
+                strokeLinejoin="round"
+              >
+                ČESKO
+              </text>
+              <text
+                x={1148}
+                y={520}
+                textAnchor="middle"
+                fontSize="18"
+                fill="var(--ink)"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.08em"
+                stroke="var(--paper)"
+                strokeWidth="6"
+                paintOrder="stroke"
+                strokeLinejoin="round"
+              >
+                SLOVENSKO
+              </text>
 
               {branches.map((branch) => {
                 const pin = BRANCH_PINS[branch.id];
@@ -97,7 +133,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
               })}
             </svg>
             <figcaption className="mono-label mt-3 text-ink-soft">
-              Obr. — Celá ČR + Slovensko · základna na Moravě
+              Obr. — Česká republika a Slovensko · základna na Moravě
             </figcaption>
           </figure>
         </div>
