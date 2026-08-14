@@ -108,7 +108,7 @@ export const BRANCH_LABEL_LAYOUT: Record<
   string,
   { dx: number; dy: number; anchor: "start" | "middle" | "end"; label: string }
 > = {
-  hq: { dx: -12, dy: -2, anchor: "end", label: "Sobáčov" },
-  olomouc: { dx: 12, dy: 4, anchor: "start", label: "Olomouc" },
-  blansko: { dx: 0, dy: 22, anchor: "middle", label: "Blansko" },
+  hq: { dx: -18, dy: -4, anchor: "end", label: "Sobáčov" },
+  olomouc: { dx: 18, dy: 6, anchor: "start", label: "Olomouc" },
+  blansko: { dx: 0, dy: 32, anchor: "middle", label: "Blansko" },
 };

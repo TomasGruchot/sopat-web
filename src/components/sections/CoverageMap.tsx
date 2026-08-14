@@ -76,13 +76,13 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
                 x={320}
                 y={290}
                 textAnchor="middle"
-                fontSize="18"
+                fontSize="28"
                 fill="var(--ink)"
                 fontFamily="var(--font-mono)"
                 fontWeight="600"
                 letterSpacing="0.08em"
                 stroke="var(--paper)"
-                strokeWidth="6"
+                strokeWidth="8"
                 paintOrder="stroke"
                 strokeLinejoin="round"
               >
@@ -92,13 +92,13 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
                 x={1148}
                 y={520}
                 textAnchor="middle"
-                fontSize="18"
+                fontSize="28"
                 fill="var(--ink)"
                 fontFamily="var(--font-mono)"
                 fontWeight="600"
                 letterSpacing="0.08em"
                 stroke="var(--paper)"
-                strokeWidth="6"
+                strokeWidth="8"
                 paintOrder="stroke"
                 strokeLinejoin="round"
               >
@@ -112,17 +112,18 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
                 const [x, y] = pin;
                 return (
                   <g key={branch.id}>
-                    <circle cx={x} cy={y} r="6" fill="var(--ink)" stroke="var(--paper)" strokeWidth="2" />
+                    <circle cx={x} cy={y} r="10" fill="var(--ink)" stroke="var(--paper)" strokeWidth="3" />
                     <text
                       x={x + layout.dx}
                       y={y + layout.dy}
                       textAnchor={layout.anchor}
                       dominantBaseline="middle"
-                      fontSize="11"
+                      fontSize="20"
+                      fontWeight="600"
                       fill="var(--ink)"
                       fontFamily="var(--font-mono)"
                       stroke="var(--paper)"
-                      strokeWidth="5"
+                      strokeWidth="7"
                       paintOrder="stroke"
                       strokeLinejoin="round"
                     >
