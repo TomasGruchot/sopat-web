@@ -9,6 +9,14 @@
   --line: #d2ccbd;
   --oxide: #b43a10;
   --oxide-deep: #8c2d0c;
+  /* Fallback until Header measures itself; keeps first paint from overflowing */
+  --header-h: 4.25rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 6.5rem;
+  }
 }
 
 @theme inline {
@@ -76,6 +84,14 @@ body {
   outline-offset: 3px;
 }
 
+/* Underline fields already signal focus via the bottom border */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.underline-field:focus-visible {
+  outline: none;
+}
+
 /* Technical caption / label — uppercase mono used for indices, captions, nav */
 .mono-label {
   font-family: var(--font-mono);
@@ -92,4 +108,15 @@ body {
 /* Unifies mixed stock photography so it reads as one printed picture set */
 .fig-img {
   filter: saturate(0.82) contrast(1.03);
+}
+
+/* Section padding that tightens on short viewports instead of stretching */
+.section-y {
+  padding-block: clamp(2.25rem, 5.5vh, 4rem);
+}
+
+/* First screen: header + hero = 100svh (100vh fallback) */
+.hero-screen {
+  height: calc(100vh - var(--header-h));
+  height: calc(100svh - var(--header-h));
 }

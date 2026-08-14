@@ -15,7 +15,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
   const servedSet = new Set<string>(SERVED_REGIONS);
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index={index}
@@ -25,7 +25,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
           description="Sídlo v Sobáčově u Litovle, pobočky v Olomouci a Blansku — realizace vlastními lidmi bez dojezdových příplatků po celé Moravě."
         />
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-x-14 gap-y-10 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="mt-8 grid grid-cols-1 items-start gap-x-14 gap-y-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <ul>
               {SERVED_REGIONS.map((id) => (

@@ -8,7 +8,7 @@ export default function References({ limit, index = "04" }: { limit?: number; in
   const items = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index={index}
@@ -17,14 +17,14 @@ export default function References({ limit, index = "04" }: { limit?: number; in
           title="Plocha, místo, typ izolace. Reálná data, žádné odhady."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((project, i) => (
             <ProjectFigure key={project.id} project={project} figureNumber={i + 2} />
           ))}
         </div>
 
         {limit && (
-          <div className="mt-12">
+          <div className="mt-8">
             <Link
               href="/realizace"
               className="mono-label text-ink underline decoration-oxide decoration-2 underline-offset-8 hover:text-oxide"

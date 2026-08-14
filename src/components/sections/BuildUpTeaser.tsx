@@ -5,7 +5,7 @@ import { roofLayers } from "@/lib/roofLayers";
 
 export default function BuildUpTeaser() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index="01"
@@ -14,7 +14,7 @@ export default function BuildUpTeaser() {
           title="Střecha je pět vrstev. Stačí, aby selhala jedna."
         />
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-x-16 gap-y-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-8 grid grid-cols-1 items-start gap-x-16 gap-y-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
               Od nosné konstrukce po hydroizolační fólii — každá vrstva má svou funkci a svůj způsob, jak selhat.

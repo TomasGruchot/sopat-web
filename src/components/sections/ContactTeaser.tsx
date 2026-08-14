@@ -4,13 +4,13 @@ import { company } from "@/lib/data";
 export default function ContactTeaser() {
   return (
     <section className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-8 px-5 py-16 sm:gap-10 sm:py-20 md:grid-cols-[1.4fr_1fr] md:px-8 md:py-24">
+      <div className="section-y mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-6 px-5 sm:gap-8 md:grid-cols-[1.4fr_1fr] md:px-8">
         <div>
           <p className="mono-label text-paper/50">Nezávazná poptávka</p>
-          <h2 className="font-display mt-5 text-[clamp(2rem,6vw,3.25rem)] font-semibold leading-[1.02]">
+          <h2 className="font-display mt-3 text-[clamp(1.7rem,min(5vw,6vh),2.75rem)] font-semibold leading-[1.02]">
             Zatéká? <em className="font-medium italic">Napište nám.</em>
           </h2>
-          <p className="mt-5 max-w-md text-paper/70">
+          <p className="mt-3 max-w-md text-sm text-paper/70 md:text-base">
             Odpovídáme na technické dotazy i bez závazku. Nabídku zpracujeme na základě fotek a přibližné plochy
             střechy — do dvou pracovních dnů.
           </p>

@@ -8,7 +8,7 @@ export default function Services({ limit, index = "02" }: { limit?: number; inde
   const items = limit ? services.slice(0, limit) : services;
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index={index}
@@ -18,7 +18,7 @@ export default function Services({ limit, index = "02" }: { limit?: number; inde
           description="Neprodáváme jednu technologii — navrhneme řešení podle skutečného stavu střechy a rozpočtu."
         />
 
-        <div className="mt-12 -mx-5 border-t border-line md:-mx-8">
+        <div className="mt-8 -mx-5 border-t border-line md:-mx-8">
           {items.map((service, i) => (
             <div
               key={service.id}

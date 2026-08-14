@@ -4,7 +4,7 @@ import { whySopat } from "@/lib/data";
 
 export default function WhySopat() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index="07"
@@ -12,7 +12,7 @@ export default function WhySopat() {
           title="Čtyři důvody, které se nedají koupit levněji."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
           {whySopat.map((item, i) => (
             <div key={item.title} className="flex gap-4 border-t border-line pt-6 sm:gap-6">
               <span className="font-display shrink-0 text-3xl font-semibold text-oxide sm:text-4xl md:text-5xl" aria-hidden>

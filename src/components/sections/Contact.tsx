@@ -22,7 +22,7 @@ const SERVICE_OPTIONS = services.map((s) => ({ value: s.id, label: s.label }));
 
 const inputClass = (error?: string) =>
   clsx(
-    "w-full rounded-none border-b bg-transparent py-2.5 text-base text-ink outline-none transition-colors",
+    "underline-field w-full rounded-none border-b bg-transparent py-2.5 text-base text-ink outline-none transition-colors",
     error ? "border-oxide" : "border-ink focus:border-oxide"
   );
 
@@ -135,7 +135,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           kicker="Nezávazná poptávka"
@@ -144,7 +144,7 @@ export default function Contact() {
           description="Odpovídáme na technické dotazy i bez závazku. Nabídku zpracujeme na základě fotek a přibližné plochy střechy."
         />
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-x-14 gap-y-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-8 grid grid-cols-1 items-start gap-x-14 gap-y-10 lg:grid-cols-[1.1fr_0.9fr]">
           {status === "success" ? (
             <div className="flex min-h-[380px] flex-col items-start justify-center border border-ink p-8 md:p-12">
               <span className="mono-label text-oxide">Odesláno</span>

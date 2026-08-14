@@ -4,7 +4,7 @@ import { materials, company } from "@/lib/data";
 
 export default function Materials() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index="05"
@@ -13,7 +13,7 @@ export default function Materials() {
           title="Nejsme vázáni na jeden systém."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-8 grid grid-cols-1 items-start gap-x-16 gap-y-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
               Materiál vybíráme podle skutečného stavu konstrukce a rozpočtu — ne podle toho, co máme na skladě.

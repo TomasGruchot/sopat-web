@@ -27,10 +27,10 @@ export function SectionHead({
         </span>
         {note && <span className="mono-label text-ink-soft">{note}</span>}
       </div>
-      <h2 className="font-display mt-6 max-w-3xl text-[clamp(1.85rem,5.5vw,3.2rem)] leading-[1.02] font-semibold sm:mt-8">
+      <h2 className="font-display mt-3 max-w-3xl text-[clamp(1.55rem,min(4vw,5.5vh),2.55rem)] leading-[1.05] font-semibold sm:mt-4">
         {title}
       </h2>
-      {description && <p className="mt-5 max-w-xl text-base text-ink-soft md:text-lg">{description}</p>}
+      {description && <p className="mt-3 max-w-xl text-sm text-ink-soft md:mt-4 md:text-base">{description}</p>}
     </div>
   );
 }

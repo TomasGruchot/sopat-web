@@ -67,7 +67,7 @@ export function Select({
         aria-controls={listId}
         onClick={() => setOpen((v) => !v)}
         className={clsx(
-          "flex w-full items-center justify-between gap-4 border-b bg-transparent py-2.5 text-left text-base outline-none transition-colors",
+          "underline-field flex w-full items-center justify-between gap-4 border-b bg-transparent py-2.5 text-left text-base outline-none transition-colors",
           error ? "border-oxide" : open ? "border-oxide" : "border-ink hover:border-oxide",
           selected ? "text-ink" : "text-ink-soft"
         )}

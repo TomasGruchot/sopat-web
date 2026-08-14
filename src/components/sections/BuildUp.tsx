@@ -62,7 +62,7 @@ function bandFill(id: string): string {
 
 export default function BuildUp() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-y">
       <Container>
         <SectionHead
           index="01"
@@ -71,7 +71,7 @@ export default function BuildUp() {
           title="Střecha je pět vrstev. Stačí, aby selhala jedna."
         />
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-x-14 gap-y-10 lg:grid-cols-[1.35fr_1fr]">
+        <div className="mt-8 grid grid-cols-1 items-start gap-x-14 gap-y-8 lg:grid-cols-[1.35fr_1fr]">
           <figure>
             <div className="border border-ink bg-paper p-4 md:p-6">
               <svg
