@@ -31,16 +31,17 @@ const siteUrl = "https://www.sopat.cz";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "SOPAT.CZ s.r.o. — hydroizolace plochých střech Olomouc a Morava",
+    default: "SOPAT.CZ s.r.o. — hydroizolace plochých střech ČR a Slovensko",
     template: "%s | SOPAT.CZ s.r.o.",
   },
   description:
-    "Hydroizolace, sanace a zateplení plochých střech. Vlastní zaměstnanci, ISO 9001, od roku 2000. Olomoucký, Jihomoravský a Zlínský kraj, Vysočina, Moravskoslezský kraj.",
+    "Hydroizolace, sanace a zateplení plochých střech. Vlastní zaměstnanci, ISO 9001, od roku 2000. Realizace po celé České republice i na Slovensku.",
   keywords: [
     "hydroizolace plochých střech Olomouc",
-    "sanace střech Morava",
+    "sanace střech ČR",
     "ploché střechy Olomouc",
     "izolace střech Blansko",
+    "hydroizolace Slovensko",
     "mPVC fólie střecha",
     "SOPAT.CZ",
   ],
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "cs_CZ",
     siteName: "SOPAT.CZ s.r.o.",
-    title: "SOPAT.CZ s.r.o. — hydroizolace plochých střech Olomouc a Morava",
+    title: "SOPAT.CZ s.r.o. — hydroizolace plochých střech ČR a Slovensko",
     description:
-      "Hydroizolace, sanace a zateplení plochých střech vlastními lidmi. Od roku 2000, po celé Moravě.",
+      "Hydroizolace, sanace a zateplení plochých střech vlastními lidmi. Od roku 2000, po celé ČR i na Slovensku.",
     images: [{ url: "/images/aerial-vsetin.jpg", width: 1581, height: 1030 }],
   },
   robots: { index: true, follow: true },
@@ -86,11 +87,8 @@ const jsonLd = {
     },
   ],
   areaServed: [
-    "Olomoucký kraj",
-    "Jihomoravský kraj",
-    "Moravskoslezský kraj",
-    "Zlínský kraj",
-    "Kraj Vysočina",
+    { "@type": "Country", name: "Czech Republic" },
+    { "@type": "Country", name: "Slovakia" },
   ],
   hasCredential: {
     "@type": "EducationalOccupationalCredential",

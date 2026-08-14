@@ -5,8 +5,6 @@ import {
   MAP_VIEWBOX,
   REGION_PATHS,
   SERVED_REGIONS,
-  REGION_LABELS,
-  REGION_LABEL_LAYOUT,
   BRANCH_PINS,
   BRANCH_LABEL_LAYOUT,
 } from "@/lib/mapData";
@@ -21,25 +19,29 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
           index={index}
           kicker="Kde pracujeme"
           note="mapa působnosti"
-          title="Pět krajů Moravy. Zbytek ČR na dotaz."
-          description="Sídlo v Sobáčově u Litovle, pobočky v Olomouci a Blansku — realizace vlastními lidmi bez dojezdových příplatků po celé Moravě."
+          title="Celá Česká republika. I Slovensko."
+          description="Sídlo v Sobáčově u Litovle, pobočky v Olomouci a Blansku — realizace vlastními lidmi po celé ČR i na Slovensku."
         />
 
         <div className="mt-8 grid grid-cols-1 items-start gap-x-14 gap-y-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <ul>
-              {SERVED_REGIONS.map((id) => (
-                <li key={id} className="flex items-center gap-3 border-b border-line py-3">
+              {company.countries.map((country) => (
+                <li key={country} className="flex items-center gap-3 border-b border-line py-3">
                   <span className="h-2.5 w-2.5 bg-oxide" aria-hidden />
-                  <span className="font-mono text-sm">{REGION_LABELS[id]}</span>
+                  <span className="font-mono text-sm">{country}</span>
                 </li>
               ))}
             </ul>
 
+            <p className="mt-6 text-sm leading-relaxed text-ink-soft">
+              Základna na Moravě — zakázky ale bereme napříč všemi kraji ČR a na Slovensku.
+            </p>
+
             <div className="mt-8 space-y-2.5">
               <div className="flex items-center gap-3">
                 <span className="h-2.5 w-2.5 bg-oxide/20 outline outline-1 outline-oxide" aria-hidden />
-                <span className="mono-label text-ink-soft">kraj, kde realizujeme zakázky</span>
+                <span className="mono-label text-ink-soft">oblast působnosti (ČR)</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="h-2.5 w-2.5 rounded-full bg-ink" aria-hidden />
@@ -53,7 +55,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
               viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
               className="w-full"
               role="img"
-              aria-label="Mapa krajů České republiky se zvýrazněnou oblastí působnosti SOPAT.CZ na Moravě a Vysočině"
+              aria-label="Mapa České republiky se zvýrazněnou působností SOPAT.CZ po celé ČR; firma realizuje zakázky i na Slovensku"
             >
               {Object.entries(REGION_PATHS).map(([id, d]) => (
                 <path
@@ -66,30 +68,6 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
                   strokeLinejoin="round"
                 />
               ))}
-
-              {SERVED_REGIONS.map((id) => {
-                const layout = REGION_LABEL_LAYOUT[id];
-                if (!layout) return null;
-                return (
-                  <text
-                    key={id}
-                    x={layout.x}
-                    y={layout.y}
-                    textAnchor={layout.anchor || "middle"}
-                    fontSize="11"
-                    fill="var(--ink)"
-                    fontFamily="var(--font-mono)"
-                    fontWeight="600"
-                    letterSpacing="0.04em"
-                    stroke="var(--paper)"
-                    strokeWidth="5"
-                    paintOrder="stroke"
-                    strokeLinejoin="round"
-                  >
-                    {layout.short}
-                  </text>
-                );
-              })}
 
               {branches.map((branch) => {
                 const pin = BRANCH_PINS[branch.id];
@@ -119,7 +97,7 @@ export default function CoverageMap({ index = "06" }: { index?: string }) {
               })}
             </svg>
             <figcaption className="mono-label mt-3 text-ink-soft">
-              Obr. — Kraje ČR, zvýrazněna oblast působnosti · {company.regions.length} krajů
+              Obr. — Celá ČR + Slovensko · základna na Moravě
             </figcaption>
           </figure>
         </div>

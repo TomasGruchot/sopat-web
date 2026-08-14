@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* "Printed technical documentation" palette: warm paper, ink, oxide-red accent */
+  /* "Printed technical documentation" palette: warm paper, ink, logo green accent */
   --paper: #f2efe8;
   --paper-2: #e8e4d8;
   --ink: #1c1914;
   --ink-soft: #6b6457;
   --line: #d2ccbd;
-  --oxide: #b43a10;
-  --oxide-deep: #8c2d0c;
+  /* Accent from sopat.cz logo green (#008000) */
+  --oxide: #008000;
+  --oxide-deep: #006000;
   /* Fallback until Header measures itself; keeps first paint from overflowing */
   --header-h: 4.25rem;
 }

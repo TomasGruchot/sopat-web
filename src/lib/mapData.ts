@@ -35,29 +35,41 @@ export const REGION_PATHS: Record<string, string> = {
     "M820.9,504.1 L829,502.5 L834.2,497.9 L836.1,493.8 L841,489.7 L840.7,487.9 L856.1,487.2 L858.2,481 L860.1,469.3 L861.8,466.1 L871.7,464.3 L876.6,465.9 L882.5,462.7 L885.2,460.2 L890.2,449.6 L888.9,440 L892.3,432.2 L892.4,427.4 L894.1,425.6 L896.1,418.3 L894.8,413.9 L900.4,408.7 L900.3,405 L905.9,403.2 L909.7,403.2 L917,401.1 L921.4,397.9 L929.1,394.9 L934.4,386 L932.8,379.8 L927.2,377.8 L928.2,374.3 L924.8,368.4 L918.4,364.2 L917.6,358.5 L912.7,357.8 L910.6,360.1 L905,357.8 L901.4,357.8 L897.3,352.3 L893.6,354.2 L891.7,351.4 L885.5,351.9 L872,355.1 L872.2,351.2 L869.1,347.5 L860.8,347.5 L860.1,350.5 L856.7,353.9 L849.7,351.4 L849.1,354.6 L841.6,359.4 L843.5,363.1 L840.3,369.3 L833.8,371.1 L830.5,367.4 L825.2,364.7 L817.4,369.7 L821.4,375.7 L816.9,379.8 L811.2,377.3 L804.1,378.9 L795.8,389.2 L793,384.8 L782.9,381.9 L777.6,377.3 L774.8,381.4 L775.1,386.2 L777.2,392.2 L771.9,394.9 L771.4,397.9 L768.3,401.8 L759.5,402.2 L756.6,404.5 L751.8,405 L749,407.7 L745,413.5 L747,418.7 L745.4,421.5 L749.7,427 L748.1,430.9 L755.3,430.4 L753.1,438.9 L748.1,439.8 L746,446.2 L742.2,448 L743.6,453.8 L756.8,449.4 L759.2,454 L758,460.9 L764.9,462.9 L767.7,466.6 L774.4,467.3 L778.8,469.6 L777.3,475.5 L784.1,476.9 L789.5,482.1 L794.3,479.2 L802.6,480.5 L807,483.7 L805.1,487.9 L814.1,491.3 L820.9,504.1 Z",
 };
 
-// Kraje, ve kterých firma reálně realizuje zakázky (zvýrazněné barevně).
-export const SERVED_REGIONS = [
-  "Olomoucky",
-  "Jihomoravsky",
-  "Zlinsky",
-  "Moravskoslezsky",
-  "Vysocina",
-] as const;
+// Celá ČR — firma realizuje zakázky po celé republice i na Slovensku.
+export const SERVED_REGIONS = Object.keys(REGION_PATHS);
 
 export const REGION_LABELS: Record<string, string> = {
-  Olomoucky: "Olomoucký kraj",
-  Jihomoravsky: "Jihomoravský kraj",
-  Zlinsky: "Zlínský kraj",
-  Moravskoslezsky: "Moravskoslezský kraj",
+  Praha: "Hlavní město Praha",
+  Stredocesky: "Středočeský kraj",
+  Jihocesky: "Jihočeský kraj",
+  Plzensky: "Plzeňský kraj",
+  Karlovarsky: "Karlovarský kraj",
+  Ustecky: "Ústecký kraj",
+  Liberecky: "Liberecký kraj",
+  Kralovehradecky: "Královéhradecký kraj",
+  Pardubicky: "Pardubický kraj",
   Vysocina: "Kraj Vysočina",
+  Jihomoravsky: "Jihomoravský kraj",
+  Olomoucky: "Olomoucký kraj",
+  Moravskoslezsky: "Moravskoslezský kraj",
+  Zlinsky: "Zlínský kraj",
 };
 
 export const REGION_CENTROIDS: Record<string, [number, number]> = {
-  Olomoucky: [753.3, 288.2],
-  Jihomoravsky: [666.5, 443.4],
-  Zlinsky: [833.3, 415.2],
-  Moravskoslezsky: [863.7, 275.3],
+  Praha: [355, 225],
+  Stredocesky: [360, 280],
+  Jihocesky: [330, 450],
+  Plzensky: [140, 320],
+  Karlovarsky: [90, 200],
+  Ustecky: [250, 120],
+  Liberecky: [430, 90],
+  Kralovehradecky: [560, 150],
+  Pardubicky: [600, 250],
   Vysocina: [531.8, 382.3],
+  Jihomoravsky: [666.5, 443.4],
+  Olomoucky: [753.3, 288.2],
+  Moravskoslezsky: [863.7, 275.3],
+  Zlinsky: [833.3, 415.2],
 };
 
 /** Popisky krajů — uvnitř polygonu (u centroidu), mimo piny poboček */
@@ -65,11 +77,20 @@ export const REGION_LABEL_LAYOUT: Record<
   string,
   { x: number; y: number; short: string; anchor?: "start" | "middle" | "end" }
 > = {
-  Olomoucky: { x: 740, y: 235, short: "Olomoucký" },
-  Jihomoravsky: { x: 655, y: 470, short: "Jihomoravský" },
-  Zlinsky: { x: 835, y: 425, short: "Zlínský" },
-  Moravskoslezsky: { x: 875, y: 285, short: "Moravskoslezský" },
+  Praha: { x: 355, y: 225, short: "Praha" },
+  Stredocesky: { x: 300, y: 290, short: "Středočeský" },
+  Jihocesky: { x: 330, y: 460, short: "Jihočeský" },
+  Plzensky: { x: 140, y: 330, short: "Plzeňský" },
+  Karlovarsky: { x: 95, y: 210, short: "Karlovarský" },
+  Ustecky: { x: 250, y: 130, short: "Ústecký" },
+  Liberecky: { x: 450, y: 95, short: "Liberecký" },
+  Kralovehradecky: { x: 570, y: 155, short: "Královéhradecký" },
+  Pardubicky: { x: 610, y: 255, short: "Pardubický" },
   Vysocina: { x: 530, y: 385, short: "Vysočina" },
+  Jihomoravsky: { x: 655, y: 470, short: "Jihomoravský" },
+  Olomoucky: { x: 740, y: 235, short: "Olomoucký" },
+  Moravskoslezsky: { x: 875, y: 285, short: "Moravskoslezský" },
+  Zlinsky: { x: 835, y: 425, short: "Zlínský" },
 };
 
 export const BRANCH_PINS: Record<string, [number, number]> = {

@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <p className="max-w-xs text-sm leading-relaxed text-paper/70">
               Hydroizolace, sanace a zateplení plochých střech vlastními zaměstnanci. Od roku {company.founded}, po
-              celé Moravě.
+              celé ČR i na Slovensku.
             </p>
             <p className="mono-label mt-6 text-paper/50">
               IČ {company.ic}

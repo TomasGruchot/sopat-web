@@ -8,7 +8,7 @@ const STATS = [
   { value: "26", label: "let na trhu" },
   { value: "300+", label: "realizovaných střech" },
   { value: "ISO 9001", label: "certifikace kvality" },
-  { value: "5", label: "krajů ČR" },
+  { value: "ČR+SK", label: "působnost" },
 ];
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
 
         <div className="mt-[clamp(0.65rem,1.8svh,1.25rem)] flex shrink-0 flex-col justify-between gap-3 sm:flex-row sm:items-end sm:gap-6">
           <p className="max-w-md text-sm text-ink-soft sm:text-base md:text-lg">
-            Nová hydroizolace i záchrana staré střechy — vlastními lidmi, bez subdodavatelů, po celé Moravě.
+            Nová hydroizolace i záchrana staré střechy — vlastními lidmi, bez subdodavatelů, po celé ČR i na Slovensku.
           </p>
           <div className="flex gap-2 sm:gap-3">
             <Button href="/kontakt" variant="solid" className="flex-1 px-4 py-2.5 sm:flex-none sm:px-6 sm:py-3.5">

@@ -13,12 +13,22 @@ export const company = {
   iso: "ISO 9001",
   insurer: "ČPP",
   regions: [
-    "Olomoucký kraj",
+    "Hlavní město Praha",
+    "Středočeský kraj",
+    "Jihočeský kraj",
+    "Plzeňský kraj",
+    "Karlovarský kraj",
+    "Ústecký kraj",
+    "Liberecký kraj",
+    "Královéhradecký kraj",
+    "Pardubický kraj",
+    "Kraj Vysočina",
     "Jihomoravský kraj",
+    "Olomoucký kraj",
     "Moravskoslezský kraj",
     "Zlínský kraj",
-    "Kraj Vysočina",
   ],
+  countries: ["Česká republika", "Slovensko"] as const,
 };
 
 export const branches = [
@@ -325,5 +335,5 @@ export const heroStats = [
   { value: 26, suffix: "", label: "let na trhu" },
   { value: 300, suffix: "+", label: "realizovaných střech" },
   { value: 0, suffix: "ISO 9001", label: "certifikace kvality", isText: true },
-  { value: 5, suffix: "", label: "krajů ČR" },
+  { value: 0, suffix: "ČR + SK", label: "působnost", isText: true },
 ];

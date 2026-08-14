@@ -5,7 +5,7 @@ import ContactTeaser from "@/components/sections/ContactTeaser";
 export const metadata: Metadata = {
   title: "Kde pracujeme",
   description:
-    "Působíme v pěti krajích Moravy a Vysočiny — sídlo v Sobáčově u Litovle, pobočky v Olomouci a Blansku.",
+    "Realizujeme zakázky po celé České republice i na Slovensku — sídlo v Sobáčově u Litovle, pobočky v Olomouci a Blansku.",
 };
 
 export default function KdePracujemePage() {
